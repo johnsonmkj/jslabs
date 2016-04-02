@@ -1,0 +1,14 @@
+API call in meteor
+
+http://stackoverflow.com/questions/14320610/how-to-make-an-api-call-using-meteor
+
+maybe worth of using
+
+https://github.com/f3rland/meteor-edmunds
+
+Fetching model year id
+
+http://developer.edmunds.com/api-documentation/vehicle/spec_model_year/v2/02_year_details/api-response.html
+
+Todo
+- check why app enters controller two times (e.g in case of edit page)

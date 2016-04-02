@@ -1,0 +1,8 @@
+{
+  "name": "edmunds",
+  "description": "Meteor Edmund's API.",
+  "homepage": "https://github.com/f3rland/meteor-edmunds",
+  "author": "f3rland",
+  "version": "0.0.2",
+  "git": "https://github.com/f3rland/meteor-edmunds.git"
+}

@@ -1,0 +1,8 @@
+/* CSS declarations go here */
+.form-horizontal .controls {
+	margin-left: 80px;
+}
+
+.form-horizontal .control-label {
+	width: 80px;
+}

@@ -1,0 +1,84 @@
+<template name="edmunds">
+
+		<div class="control-group">
+			<label class="control-label" for="yearsList">Year: </label>
+			<div class="controls">
+				<select id="yearsList">
+					{{#each years}}
+						{{> edmundsyear}}
+					{{/each}}
+				</select>
+			</div>
+
+			<label class="control-label" for="makesList">Make: </label>
+			<div class="controls">
+				<select id="makesList">
+					{{#each makes}}
+						{{> edmundsmake}}
+					{{/each}}
+				</select>
+			</div>
+
+			<label class="control-label" for="modelsList">Model: </label>
+			<div class="controls">
+				<select id="modelsList">
+					{{#each models}}
+						{{> edmundsmodel}}
+					{{/each}}
+				</select>
+			</div>
+
+			<label class="control-label" for="trimList">Trim: </label>
+			<div class="controls">
+				<select id="trimList">
+					{{#each trims}}
+						{{> edmundstrim}}
+					{{/each}}
+				</select>
+			</div>
+		</div>
+
+		{{#if displayDetails}}
+		<div class="control-group">
+			<label class="control-label" for="edmunds-trimList">Details:</label>
+			<div class="controls">
+				Doors: {{details.numOfDoors}}<BR />
+				Driven Wheels: {{details.drivenWheels}}<BR />
+				Transmission: {{details.transmission.transmissionType}}<BR />
+				MPG highway: {{details.MPG.highway}}<BR />
+				MPG city: {{details.MPG.city}}<BR />
+			</div>
+		</div>
+		{{/if}}
+
+
+        <div class="control-group">
+            <label class="control-label" for="edmunds-trimList">Maintenance Plan:</label>
+            <div class="controls">
+                {{maintenance}}
+            </div>
+        </div>
+
+
+		{{#with logo color}}
+			{{.}}
+		{{/with}}
+
+</template>
+
+
+<template name="edmundsyear">
+    <option value="{{this}}">{{this}}</option>
+</template>
+
+<template name="edmundsmake">
+    <option value="{{id}}">{{name}}</option>
+</template>
+
+<template name="edmundsmodel">
+    <option value="{{id}}">{{name}}</option>
+</template>
+
+<template name="edmundstrim">
+    <option value="{{id}}">{{name}}</option>
+</template>

@@ -1,0 +1,71 @@
+<div ng-show="isAdminRole()">
+
+    <div>
+
+        <form class="form-horizontal" ng-submit="editClient.save(newClientForm.$valid)" name="newClientForm" novalidate>
+
+            <legend>Edit Client</legend>
+
+            <div class="control-group" ng-class="{error:newClientForm.companyName.$invalid && !newClientForm.companyName.$pristine}">
+                <label class="control-label" for="companyName">Company Name</label>
+                <div class="controls">
+                    <input type="text" id="companyName" name="companyName" ng-model="editClient.client.companyName" placeholder="Company Name" ng-required="true">
+                    <span class="help-block" ng-show="newClientForm.companyName.$invalid && !newClientForm.companyName.$pristine">Company Name is required</span>
+                </div>
+            </div>
+
+            <div class="control-group" ng-class="{error:newClientForm.firstName.$invalid && !newClientForm.firstName.$pristine}">
+                <label class="control-label" for="firstName">First Name</label>
+                <div class="controls">
+                    <input type="text" id="firstName" name="firstName" ng-model="editClient.client.firstName" placeholder="First Name" ng-required="true">
+                    <span class="help-block" ng-show="newClientForm.firstName.$invalid && !newClientForm.firstName.$pristine">First Name is required</span>
+                </div>
+            </div>
+
+            <div class="control-group" ng-class="{error:newClientForm.lastName.$invalid && !newClientForm.lastName.$pristine}">
+                <label class="control-label" for="lastName">Last Name</label>
+                <div class="controls">
+                    <input type="text" id="lastName" name="lastName" ng-model="editClient.client.lastName" placeholder="Last Name" ng-required="true">
+                    <span class="help-block" ng-show="newClientForm.lastName.$invalid && !newClientForm.lastName.$pristine">Last Name is required</span>
+                </div>
+            </div>
+
+
+            <div class="control-group" ng-class="{error:newClientForm.phoneNumber.$invalid && !newClientForm.phoneNumber.$pristine}">
+                <label class="control-label" for="phoneNumber">Phone Number</label>
+                <div class="controls">
+                    <input type="text" id="phoneNumber" name="phoneNumber" ng-model="editClient.client.phoneNumber" placeholder="Phone Number" ng-minlength="10" ng-maxlength="10" only-digits>
+                    <span class="help-block" ng-show="newClientForm.phoneNumber.$invalid && !newClientForm.phoneNumber.$pristine">Phone number is not valid</span>
+                </div>
+            </div>
+
+            <div class="control-group" ng-class="{error:newClientForm.email.$invalid && !newClientForm.email.$pristine}">
+                <label class="control-label" for="email">Email</label>
+                <div class="controls">
+                    <input type="email" id="email" name="email" ng-model="editClient.client.email" placeholder="Email" ng-required="true">
+                    <span class="help-block" ng-show="newClientForm.email.$invalid && !newClientForm.email.$pristine">Email is not valid</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="email">Logo</label>
+                <div class="controls">
+                    <img width="200" height="200" ng-model="editClient.client.logo" ng-src="{{editClient.client.logo.image}}" />
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="email">Change Logo</label>
+                <div class="controls">
+                    <input type="file" id="logo" ng-model="editClient.client.logoId" placeholder="Logo" ngf-select>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" ng-disabled="clientForm.$invalid">Submit</button>
+            <button class="btn" ng-click="goToList()">Cancel</button>
+
+        </form>
+
+    </div>
+
+</div>

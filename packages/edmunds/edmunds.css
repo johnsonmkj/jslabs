@@ -1,0 +1,17 @@
+.logo {
+	display: inline-block;
+	background: url('http://developer.edmunds.com/assets/themes/twitter/img/branding-guide/sprite-300-horizontal.png') no-repeat;
+	width: 300px;
+	height: 60px;
+	float: right;
+}
+
+.logo.grey {
+	background-position: 0 -208px;
+}
+.logo.white {
+	background-position: 0 -104px;
+}
+.logo.red {
+	background-position: 0 0;
+}

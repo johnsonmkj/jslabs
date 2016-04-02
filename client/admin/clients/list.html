@@ -1,0 +1,40 @@
+<div ng-show="isAdminRole()">
+
+    <div>
+        <h1>Clients</h1>
+    </div>
+
+    <div>
+        <button class="btn btn-large btn-primary" type="button" ng-click="clientsList.createClient()">Add Client</button>
+    </div>
+
+    <div>
+        <input type="text" ng-model="search" class="input-xxlarge search-query" placeholder="Search by company name or first name or last name"/>
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Company Name</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="client in clientsList.clients | filter:clientsList.filterClients | limitTo:clientsList.pageLimit()" ui-sref="admin_client_edit({clientId:client._id})">
+            <td>{{client.companyName}}</td>
+            <td>{{client.firstName}}</td>
+            <td>{{client.lastName}}</td>
+            <td>{{client.phoneNumber}}</td>
+            <td>{{client.email}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <button ng-show="clientsList.hasMoreClientsToShow()" ng-click="clientsList.showMoreClients()" class="btn btn-success">
+        Show more
+    </button>
+
+</div>
